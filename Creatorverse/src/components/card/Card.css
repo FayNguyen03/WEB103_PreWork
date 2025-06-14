@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display&display=swap');
+
+:root{
+    --grad-color1: #eeaf61;
+    --grad-color2: #fb9062;
+    --grad-color3: #ee5d6c;
+    --grad-color4: #ce4993;
+    --grad-color5: #6a0d83;
+}
+
+.cardContainer {
+  width: 400px;
+  background-color: #1c1c1e;
+  color: white;
+  border-radius: 40px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 2);
+  font-family: 'Montserrat', sans-serif;
+  margin: 10px auto;
+  position: relative;
+}
+
+
+.cardImage {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid white;
+  position: absolute;
+  top: -60px;
+  left: calc(50% - 60px);
+  background-color: #333;
+}
+
+.cardName {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+.cardDescription {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.4;
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+

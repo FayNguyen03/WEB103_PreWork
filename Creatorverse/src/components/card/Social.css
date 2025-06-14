@@ -1,0 +1,22 @@
+.cardSocial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* spacing between icons */
+  padding: 10px;
+}
+
+#icon {
+  font-size: 20px; 
+  color: white;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+#icon:hover {
+  color: cyan;
+}
+
+#icon:active {
+  color: red;
+}
