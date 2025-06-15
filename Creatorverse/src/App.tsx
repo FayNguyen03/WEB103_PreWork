@@ -7,7 +7,7 @@ import ViewCreator from './components/pages/ViewCreator'
 import ShowCreators from './components/pages/ShowCreators'
 import {supabase} from './client.ts';
 import './App.css'
-
+import { createClient } from '@supabase/supabase-js'
 
 function App() {
   const [data, setData] = useState<any[]>([]);
@@ -16,7 +16,7 @@ function App() {
   useEffect(() =>{
     //run after every render
     const fetchData = async () => {
-      const {data, error} = await supabase.from('influencers').select();
+      const {data, error} = await supabase.from("influencers").select();
     if (error){
       console.error('Error fetching data from the database:', error.message);
       setError(error);
@@ -30,7 +30,7 @@ function App() {
   
   return(
     <div>
-      {error ? <p>Error: {error.message}</p> : <ShowCreators data={data}/>}
+      <ViewCreator id = {2} />
     </div>
   )
 }

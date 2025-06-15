@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../card/Card';
+import './ShowCreators.css';
 
 type ShowCreatorsProps ={
     data:  {
@@ -18,7 +19,7 @@ const ShowCreators: React.FC<ShowCreatorsProps>= (props:ShowCreatorsProps) =>{
 
     return (dataLength > 0 ? <div className='listCreator'>
         {props.data.map((element: { id: number; name: string; description: string; youtube?: string; tiktok?: string; insta?: string; x?:string, imageURL: string; }) => {
-            return <Card 
+            return <Card
                 id={element.id} 
                 name={element.name}  
                 description={element.description}  

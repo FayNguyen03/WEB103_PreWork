@@ -52,3 +52,4 @@ export default tseslint.config({
   },
 })
 ```
+{error ? <p>Error: {error.message}</p> : <ShowCreators data={data}/>}

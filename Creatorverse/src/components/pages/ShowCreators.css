@@ -1,0 +1,13 @@
+.listCreator {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 10%; 
+  column-gap: 10%; 
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .listCreator {
+    grid-template-columns: 1fr; 
+  }
+}
