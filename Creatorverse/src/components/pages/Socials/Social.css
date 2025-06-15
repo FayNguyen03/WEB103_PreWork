@@ -1,0 +1,8 @@
+.socialList{
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+    justify-content: center;
+    align-items: right;
+    margin-left: 10px;
+}

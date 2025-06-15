@@ -30,7 +30,7 @@ const SocialElement: React.FC<SocialElementProps> = (props:SocialElementProps) =
         }
     } 
     return(
-        <a href={props.url}><i id="icon" className={icon} /> {props.name}</a>
+        <div className="social-link"><a href={props.url}><i className={icon} /> {props.name}</a></div>
     )
 }
 export default SocialElement;

@@ -1,8 +1,8 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import { supabase } from '../../client';
-import Social from './Socials/SocialElement';
-
+import Social from './Socials/Social';
+import "./ViewCreator.css"
 type ViewCreatorProps = {
     id:number
 }
@@ -30,25 +30,30 @@ const ViewCreator: React.FC<ViewCreatorProps> = (props:ViewCreatorProps) =>{
                 setError(error);
             }
             else{
-                setData(data || []);
+                setData(data && data.length > 0 ? data[0] : null);
             }
         };
         fetchData();  
     }, []  
     );
-    const youtube: string | null = data ? (data.youtube ? data.youtube : null) : null;
-    const x: string | null = data ? (data.x ? data.x : null) : null;
-    const insta: string | null = data ? (data.insta ? data.insta : null) : null;
-    const tiktok: string | null = data ? (data.tiktok ? data.tiktok : null) : null;
+    const youtube: string | undefined = data ? (data.youtube ? data.youtube : undefined) : undefined;
+    const x: string | undefined = data ? (data.x ? data.x : undefined) : undefined;
+    const insta: string | undefined = data ? (data.insta ? data.insta : undefined) : undefined;
+    const tiktok: string | undefined = data ? (data.tiktok ? data.tiktok : undefined) : undefined;
     return(
-        <div>
-            {data && 
+        <div className="creatorPageBorder">
+            {data ? 
             <div className="creatorPage">
-                <img className="creatorImg" src={data.imageURL}/>
-                <h1 className="creatorName">{data.name}</h1>
-                <p className="creatorDescription">{data.description}</p>
-                <Social youtube={youtube} x={data.x} tiktok={data.tiktok}  insta={data.insta} />
-            </div> }
+                <div className='imageAndSocial'>
+                    <img className="creatorImg" src={data.imageURL}/>
+                    <Social youtube={youtube} x={data.x} tiktok={data.tiktok}  insta={data.insta} />
+                </div>
+                <div className='description'>
+                    <h1 className="creatorName">{data.name}</h1>
+                    <p className="creatorDescription">{data.description}</p>
+                </div>
+                
+            </div> : <h1>No Creator Found</h1>}
         </div>
     )
 }

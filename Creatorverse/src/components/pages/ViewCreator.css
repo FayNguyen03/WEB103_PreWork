@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display&display=swap');
+
+.creatorPage {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: flex-start;
+    justify-content: left;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+    font-family: 'Georgia', 'serif';
+    background: linear-gradient(
+        135deg,
+        #d4d4d4,
+        #f0f0f0,
+        #dcdcdc,
+        #bfbfbf,
+        #f8f8f8,
+        #d4d4d4
+    );
+    background-size: 400% 400%;
+    animation: shine 5s linear alternate infinite ;
+    position: relative;
+    overflow: hidden;
+}
+.creatorPage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2N8Y+z8DwAFYAKoyYxNLwAAAABJRU5ErkJggg=="); /* tiny grey noise */
+  opacity: 0.08;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.creatorPage > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.imageAndSocial{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+    gap: 1rem;                   
+}
+
+.description{
+    display: flex;
+    position: relative;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;                   
+}
+
+.creatorImg {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20%;
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.creatorName {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Playfair Display', serif; 
+  color: #333;
+}
+
+.creatorDescription {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #333;
+  line-height: 1.6;
+  font-family: 'Merriweather', serif; 
+}
+
+@media (max-width: 768px) {
+  .creatorPage {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .creatorImg {
+    width: 150px;
+    height: 150px;
+  }
+}

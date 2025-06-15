@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialElement from './SocialElement';
+import "./Social.css"
 
 type SocialProps = {
     youtube?: string ;
