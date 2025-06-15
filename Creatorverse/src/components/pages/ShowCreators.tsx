@@ -1,9 +1,35 @@
 import React from 'react';
 import Card from '../card/Card';
-const ShowCreators: React.FC = () =>{
-    return <div>
-        <Card id={1} name="Mei Chan" description="Yonsei Alumni" youtube="https://www.youtube.com/@meichan" tiktok = "https://www.tiktok.com/@nhatkycuameichan?lang=en" insta="https://www.instagram.com/meichannnnn/" imageURL='https://yt3.googleusercontent.com/5u0O1frM5cvDjAy_boTS_8Sasu_R-qA2wbL7CFuqtioIiTUiOKHRe8KqQDlU9RTkkhsLbvyY280=s900-c-k-c0x00ffffff-no-rj'/>
-        <Card id={2} name="Phillip Le" description="Vietnamese living in New York city" youtube="https://www.youtube.com/philliple" tiktok = "https://www.tiktok.com/@itsphilliple" insta="https://www.instagram.com/ninomars" imageURL='https://yt3.googleusercontent.com/89pTIPs8Wix-pf0owP9Mdym6mVPLCjb_cYxHLLE23i3mbXnCZ1qQ6yJUn8o_MyrMEPGmfErKnw=s900-c-k-c0x00ffffff-no-rj'/>
-    </div>
+
+type ShowCreatorsProps ={
+    data:  {
+        id: number;
+        name: string;
+        description: string;
+        youtube?: string;
+        tiktok?: string;
+        insta?: string;
+        x?: string;
+        imageURL: string;
+    }[];
+}
+const ShowCreators: React.FC<ShowCreatorsProps>= (props:ShowCreatorsProps) =>{
+    const dataLength:number = props.data.length;
+
+    return (dataLength > 0 ? <div className='listCreator'>
+        {props.data.map((element: { id: number; name: string; description: string; youtube?: string; tiktok?: string; insta?: string; x?:string, imageURL: string; }) => {
+            return <Card 
+                id={element.id} 
+                name={element.name}  
+                description={element.description}  
+                youtube={element.youtube}  
+                tiktok = {element.tiktok}  
+                insta={element.insta}  
+                x={element.x}
+                imageURL={element.imageURL} />
+        })}
+        </div> : 
+        <h1>No Creators Added</h1>
+    )
 }
 export default ShowCreators;

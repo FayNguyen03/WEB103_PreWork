@@ -8,8 +8,10 @@
     --grad-color5: #6a0d83;
 }
 
+
 .cardContainer {
   width: 400px;
+  height: 250px;
   background-color: #1c1c1e;
   color: white;
   border-radius: 40px;
@@ -49,4 +51,6 @@
   margin-top: 10px;
   font-family: 'Montserrat', sans-serif;
 }
+
+
 
