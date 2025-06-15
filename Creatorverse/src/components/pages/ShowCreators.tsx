@@ -1,24 +1,30 @@
-import React from 'react';
+import {useState, useEffect} from 'react';
 import Card from '../card/Card';
 import './ShowCreators.css';
+import {supabase} from '../../client.ts';
 
-type ShowCreatorsProps ={
-    data:  {
-        id: number;
-        name: string;
-        description: string;
-        youtube?: string;
-        tiktok?: string;
-        insta?: string;
-        x?: string;
-        imageURL: string;
-    }[];
-}
-const ShowCreators: React.FC<ShowCreatorsProps>= (props:ShowCreatorsProps) =>{
-    const dataLength:number = props.data.length;
+const ShowCreators: React.FC= () =>{
+    const [data, setData] = useState<any[]>([]);
+    const [error, setError] = useState<Error | null>(null);
+
+    useEffect(() =>{
+        //run after every render
+        const fetchData = async () => {
+            const {data, error} = await supabase.from("influencers").select();
+            if (error){
+            console.error('Error fetching data from the database:', error.message);
+            setError(error);
+            }else{
+            setData(data || []);
+            }
+        };
+        fetchData();  
+        }, []  
+    );
+    const dataLength:number = data.length;
 
     return (dataLength > 0 ? <div className='listCreator'>
-        {props.data.map((element: { id: number; name: string; description: string; youtube?: string; tiktok?: string; insta?: string; x?:string, imageURL: string; }) => {
+        {data.map((element: { id: number; name: string; description: string; youtube?: string; tiktok?: string; insta?: string; x?:string, imageURL: string; }) => {
             return <Card
                 id={element.id} 
                 name={element.name}  

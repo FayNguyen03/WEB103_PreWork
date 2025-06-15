@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+/* Reset and layout */
+
+
+/* Header wrapper */
+.header {
+  width: 100vw;
+  margin-bottom: 10%;
+  overflow-x: hidden;
+}
+
+/* Neon Poster Section */
+.poster {
+    background: url('/Creatoverse.jpg') no-repeat center center;
+    background-size: cover;
+    width: 100vw;
+    height: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    /* Neon glow */
+    box-shadow:
+        0 0 20px #6575A6,
+        0 0 30px #04070D,
+        0 0 60px #253659,
+        0 0 100px #172D40;
+    /* Animation */
+    animation: zoomPulse 8s ease-in-out infinite;
+    z-index:1;
+}
+
+/* Zoom in / zoom out animation */
+@keyframes zoomPulse {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.03); }
+  50% { transform: scale(1.05); }
+  75% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+.headline {
+  color: white;
+  font-family: 'Bubblegum Sans', cursive;
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 0 0 5px cyan, 0 0 10px #04070D, 0 0 20px #6a0d83;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: fit-content;
+  padding: 10px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+.buttons_section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 2rem;
+}
+
+/* Animated buttons */
+.buttons_section button {
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #04070D, #6575A6);
+  color: white;
+  box-shadow: 0 0 10px rgba(0,255,255,0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.buttons_section button:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 20px rgba(0,255,255,0.5), 0 10px 15px rgba(0,0,0,0.2);
+  animation: pulse 1.5s infinite;
+}
+
+/* Click effect */
+.buttons_section button:active {
+  transform: scale(0.97);
+  background: white;
+  color: black;
+  box-shadow: 0 0 15px #04070D;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0,255,255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(0,255,255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0,255,255, 0);
+  }
+}
