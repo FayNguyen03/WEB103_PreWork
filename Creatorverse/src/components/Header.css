@@ -69,7 +69,6 @@
   padding: 2rem;
 }
 
-/* Animated buttons */
 .buttons_section button {
   padding: 14px 28px;
   font-size: 1rem;
@@ -86,14 +85,12 @@
   overflow: hidden;
 }
 
-/* Hover effect */
 .buttons_section button:hover {
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 0 20px rgba(0,255,255,0.5), 0 10px 15px rgba(0,0,0,0.2);
   animation: pulse 1.5s infinite;
 }
 
-/* Click effect */
 .buttons_section button:active {
   transform: scale(0.97);
   background: white;

@@ -1,0 +1,75 @@
+/* Overall Form Styling */
+.form {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.form h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.form > form > div {
+  margin-bottom: 1.5rem;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: transparent;
+  color: black;
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* Placeholder styling */
+.form input::placeholder,
+.form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: #333;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+/* Submit Button */
+.form button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #04070D, #6575A6);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.form button:hover {
+  background: linear-gradient(135deg, #00ccff, #0055cc);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.form button:active {
+  transform: scale(0.98);
+  background: white;
+  color: black;
+  box-shadow: 0 0 15px black;
+}
