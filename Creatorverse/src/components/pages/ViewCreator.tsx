@@ -1,11 +1,10 @@
 import React from 'react';
+import { useParams } from 'react-router';
 import {useState, useEffect} from 'react';
 import { supabase } from '../../client';
 import Social from './Socials/Social';
 import "./ViewCreator.css"
-type ViewCreatorProps = {
-    id:number
-}
+import { useNavigate } from 'react-router';
 
 type Influencer = {
     id: number;
@@ -18,13 +17,14 @@ type Influencer = {
     tiktok?: string; 
 };
 
-const ViewCreator: React.FC<ViewCreatorProps> = (props:ViewCreatorProps) =>{
+const ViewCreator: React.FC = () =>{
+    const { id } = useParams<{ id: string }>();
     const [data, setData] = useState<Influencer | null>(null);
     const [error, setError] = useState<Error|null>(null);
-
+    const navigate = useNavigate();
     useEffect(() =>{
         const fetchData = async () => {
-            const {data, error} = await supabase.from("influencers").select().eq('id', props.id);
+            const {data, error} = await supabase.from("influencers").select().eq('id', Number(id));
             if (error){
                 console.error('Error fetching data from the database:', error.message);
                 setError(error);
@@ -51,6 +51,10 @@ const ViewCreator: React.FC<ViewCreatorProps> = (props:ViewCreatorProps) =>{
                 <div className='description'>
                     <h1 className="creatorName">{data.name}</h1>
                     <p className="creatorDescription">{data.description}</p>
+                    <div className="buttonSection" >
+                        <div id="button" onClick = {() => navigate(`/Edit/${data.id}`)}><i className="fa-solid fa-pen-to-square"></i> Edit</div>
+                        <div id="button" onClick = {() => navigate(`/Delete/${data.id}`)}><i className="fa-solid fa-eraser"></i> Delete This Creator</div>
+                    </div>
                 </div>
                 
             </div> : <h1>No Creator Found</h1>}

@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import Card from '../card/Card';
 import './ShowCreators.css';
 import {supabase} from '../../client.ts';
+import { useNavigate } from "react-router";
 
 const ShowCreators: React.FC= () =>{
     const [data, setData] = useState<any[]>([]);

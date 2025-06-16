@@ -1,5 +1,7 @@
 import React from 'react';
-const AddCreator: any = () =>{
+import Form from '../form/Form';
 
+const AddCreator: React.FC = () =>{
+    return <Form />
 }
 export default AddCreator;

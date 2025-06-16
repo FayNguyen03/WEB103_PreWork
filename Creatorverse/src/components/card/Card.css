@@ -11,7 +11,7 @@
 
 .cardContainer {
   width: 400px;
-  height: 250px;
+  height: 300px;
   background-color: #1c1c1e;
   color: white;
   border-radius: 40px;
@@ -23,6 +23,11 @@
   position: relative;
 }
 
+.cardContainer:hover{
+  box-shadow: 0 4px 30px cyan;
+  background-color: #333;
+  cursor: pointer;
+}
 
 .cardImage {
   width: 120px;

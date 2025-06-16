@@ -4,9 +4,10 @@
   gap: 10%; 
   column-gap: 10%; 
   padding: 2rem;
+  margin-bottom: 10%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 750px) {
   .listCreator {
     grid-template-columns: 1fr; 
   }
