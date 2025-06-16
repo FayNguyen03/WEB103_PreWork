@@ -38,7 +38,6 @@ Here's a walkthrough of implemented required features:
 👉🏿<img src='Walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  👉🏿 GIF tool here
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -46,7 +45,7 @@ GIF created with ...  👉🏿 GIF tool here
 
 ## Notes
 
-Describe any challenges encountered while building the app or any additional context you'd like to add.
+I need to learn how to use React again. Integrating the database was also a really challenging task. I still had some issues with the .env file but I think i will figure it out soon!
 
 ## License
 
