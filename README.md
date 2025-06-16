@@ -2,9 +2,9 @@
 
 Submitted by: **Khanh Tra Nguyen Tran**
 
-About this web app: **👉🏿 app description here**
+About this web app: A website to keep track all of your favorite creators
 
-Time spent: **👉🏿 X** hours
+Time spent: **12** hours
 
 ## Required Features
 
@@ -35,7 +35,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+👉🏿<img src='Walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  👉🏿 GIF tool here
